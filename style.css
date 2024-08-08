@@ -1,0 +1,213 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* 头部样式 */
+header {
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+nav {
+    display: none; /* 默认隐藏导航菜单 */
+    transition: max-height 0.5s ease-in-out; /* 添加过渡效果 */
+    max-height: 0;
+    overflow: hidden;
+}
+
+nav.active {
+    display: block; /* 激活导航菜单时显示 */
+    max-height: 500px; /* 设置最大高度确保动画效果 */
+}
+
+nav ul {
+    list-style: none; /* 移除列表项的默认样式 */
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none; /* 去掉下划线装饰 */
+    font-weight: bold;
+    padding: 10px 15px;
+    display: block;
+    transition: background 0.3s, color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+}
+
+.menu-toggle {
+    display: block;
+    cursor: pointer;
+    margin: 10px auto;
+    width: 30px;
+    height: 30px;
+    position: relative;
+}
+
+.menu-toggle .bar {
+    display: block;
+    width: 100%;
+    height: 4px;
+    margin: 5px 0;
+    background-color: #fff;
+    transition: 0.4s;
+    border-radius: 2px;
+}
+
+/* 变换为交叉图标 */
+.menu-toggle.active .bar:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.menu-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active .bar:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+/* 确保图片自适应内容区域 */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto; /* 使图片居中 */
+}
+
+/* 其他样式保持不变 */
+section {
+    padding: 60px 20px;
+    margin: 20px 0;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    max-width: 1000px;
+    margin: 20px auto;
+}
+
+#home {
+    position: relative;
+    background: url('imgs/photo_01.jpg') no-repeat center center/cover; /* 使用背景图片 */
+    color: #fff;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 0 0 10px 10px;
+}
+
+/* 添加半透明覆盖层 */
+#home::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* 设置透明度 */
+    z-index: 1; /* 确保覆盖层在背景图之上 */
+}
+
+#home div {
+    position: relative; /* 使内容显示在覆盖层之上 */
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.5); /* 进一步增强透明效果 */
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+}
+
+#home h2 {
+    font-size: 3em;
+    margin: 0;
+    font-weight: 300;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+#menu, #about, #contact {
+    text-align: center;
+}
+
+#about p {
+    text-align: left;
+}
+
+#menu h2, #about h2, #contact h2 {
+    border-bottom: 2px solid #6e8efb;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: #6e8efb;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+button:hover {
+    background-color: #a777e3;
+    transform: scale(1.05);
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -4px 8px rgba(0,0,0,0.1);
+}
+
+footer p {
+    margin: 0;
+}
+
+/* 移动设备适配 */
+@media (min-width: 768px) {
+    .menu-toggle {
+        display: none; /* 隐藏汉堡菜单按钮 */
+    }
+
+    nav {
+        display: block; /* 在桌面上显示完整导航菜单 */
+        max-height: none; /* 去除最大高度限制 */
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: center;
+        list-style: none; /* 桌面上也移除列表项的默认样式 */
+    }
+
+    nav ul li {
+        display: inline;
+        margin: 0 15px;
+    }
+
+    nav ul li a {
+        padding: 10px 20px;
+        font-size: 1.1em;
+        text-decoration: none; /* 桌面版也去掉下划线装饰 */
+    }
+}
