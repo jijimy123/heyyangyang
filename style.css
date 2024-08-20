@@ -168,6 +168,51 @@ button:hover {
     transform: scale(1.05);
 }
 
+/* ---------------------------------------- gallery ------------------------------------------- */
+.gallery {
+    position: relative;
+    min-height: 100vh;
+    background: #ddd;
+    padding-top: 3%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.gallery h2 {
+    font-size: 36px;
+    text-align: center;
+    border-bottom: 2px solid black;
+    width: 15%;
+    margin-bottom: 3%;
+}
+
+.gallerys {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    padding: 10px;
+}
+
+.gallerys .gallery-image {
+    height: 500px;
+    width: 600px;
+    border: 10px solid #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,.1);
+    overflow:  hidden;
+}
+
+.gallery-image img {
+    height: 100%;
+    width: 100%;
+    transition: .2s linear;
+}
+
+.gallery-image:hover img {
+    transform: scale(1.1);
+}
+
 footer {
     background: #333;
     color: #fff;
