@@ -142,11 +142,36 @@ section {
     text-align: center;
 }
 
+#notice {
+    text-align: center;
+    font-size: 500;
+}
+
+#notice h2 {
+    font-size: 40px;
+    color: red;
+}
+
+#notice p {
+    text-align: left;
+    font-size: 35px;
+}
+
+#notice u {
+    color: red;
+    font: bold;
+}
+
+#notice .under {
+    text-align: left;
+    font-size: 20px;
+}
+
 #about p {
     text-align: left;
 }
 
-#menu h2, #about h2, #contact h2 {
+#menu h2, #about h2, #contact h2, #notice h2 {
     border-bottom: 2px solid #6e8efb;
     padding-bottom: 10px;
     margin-bottom: 20px;
